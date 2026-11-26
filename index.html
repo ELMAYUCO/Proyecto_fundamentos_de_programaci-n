@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Buscador de Medicamentos</title>
+<style>
+  body { font-family: Arial; text-align: center; background-image: url("fondo.jpg"); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 100vh; }
+  button { padding: 10px; margin: 5px; border-radius: 10px; border: none; background: #d9d937; color: white; font-size: 16px; }
+  #caja { background: rgba(169, 125, 125, 0); padding: 20px; margin: 20px; border-radius: 15px; display: none; }
+  img { width: 250px; border-radius: 15px; }
+  #info{color:rgb(245, 245, 246)}
+  .tabla-guia {
+  float: left;
+  margin: 20px;
+  border-collapse: collapse;
+  background-color: rgba(196, 180, 180, 0.877);
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabla-guia th,
+.tabla-guia td {
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  padding: 8px 14px;
+  text-align: left; 
+}
+
+.tabla-guia th {
+  background-color: rgba(217, 217, 55, 0.9);
+  color: black;
+}
+
+</style>
+</head>
+<body>
+<table class="tabla-guia">
+  <tr>
+    <th>Medicamento</th>
+    <th>Enfoque</th>
+  </tr>
+  <tr>
+    <td>Lactopar</td>
+    <td>Leche</td>
+  </tr>
+  <tr>
+    <td>Ergopar</td>
+    <td>Placenta</td>
+  </tr>
+  <tr>
+    <td>Cato Folic</td>
+    <td>Energía</td>
+  </tr>
+  <tr>
+    <td>Dyscural</td>
+    <td>Diarrea</td>
+  </tr>
+  <tr>
+    <td>Ivert-in</td>
+    <td>Desparasitante</td>
+  </tr>
+  <tr>
+    <td>Penclofen</td>
+    <td>Infecciones</td>
+  </tr>
+</table>
+
+<h1>🐄 Buscador de Medicamentos 💊</h1>
+<p>Elige un medicamento para ver su foto y para qué sirve:</p>
+
+<button onclick="mostrar('lactopar')">Lactopar</button>
+<button onclick="mostrar('ergopar')">Ergopar</button>
+<button onclick="mostrar('cato')">Cato Folic</button>
+<button onclick="mostrar('dyscural')">Dyscural</button>
+<button onclick="mostrar('iverf-in')">Iverf-in</button>
+<button onclick="mostrar('penclofen')">Penclofen</button>
+
+<div id="caja">
+  <h2 id="nombre"></h2>
+  <img id="foto" src="">
+  <p id="info"></p>
+</div>
+
+<script>
+function mostrar(med) {
+  let nombre = document.getElementById("nombre");
+  let foto = document.getElementById("foto");
+  let info = document.getElementById("info");
+  document.getElementById("caja").style.display = "block";
+
+  if(med == 'lactopar'){
+    nombre.innerText = "Lactopar";
+    foto.src = "lactopar.jpg";
+    info.innerText = "sirve para estimular la bajada de leche en animales de granja tras el parto, y también ayuda a que el utero regrese a tu tamaño normal después de que nace la cría.";
+  }
+  if(med == 'ergopar'){
+    nombre.innerText = "Ergopar";
+    foto.src = "ergopar.jpg";
+    info.innerText = "se utiliza principalmente para ayudar a las vacas cuando tiene retención de placenta, es decir, cuando despues de dar a luz no logran expulsar la placenta por completo. funciona estimulndo contracciones para ayudar a limpiar el interior del animal.";
+  }
+  if(med == 'cato'){
+    nombre.innerText = "Cato Folic";
+    foto.src = "cato.jpg";
+    info.innerText = "Es como un Red Bull para animales. Les da energía cuando andan cansados.";
+  }
+  if(med == 'dyscural'){
+    nombre.innerText = "dyscural";
+    foto.src = "dyscural.jpg";
+    info.innerText = "Sirve para cortar la diarrea y quitar infecciones del estómago.";
+  }
+  if(med == 'iverf-in'){
+    nombre.innerText = "iverf-in";
+    foto.src = "iverf-in.jpg";
+    info.innerText = "Sirve para matar lombrices y parásitos de adentro, para desparasitar.";
+  }
+  if(med == 'penclofen'){
+    nombre.innerText = "penclofen";
+    foto.src = "penclofen.jpg";
+    info.innerText = "se utiliza para combatir infecciones bacterianas graves en el ganado. al ser de larga acción, unasola aplicación sigue funcionando dentro del animal durante varios días para curar la infección de raiz";
+  }
+}
+</script>
+</body>
+</html>
